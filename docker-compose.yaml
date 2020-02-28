@@ -1,0 +1,26 @@
+version: '3.0'
+
+services:
+  api:
+    build:
+      context: .
+    image: api-core
+    env_file: environments/.development.docker
+    ports:
+      - 3000:3000
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: testmongo
+    ports:
+      - '27017:27017'
+    networks:
+      - mongo-compose-network
+
+networks:
+  mongo-compose-network:
+    driver: bridge

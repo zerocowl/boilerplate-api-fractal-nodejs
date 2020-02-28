@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "babel-node src/server.js",
+    "build": "./node_modules/.bin/babel src --out-dir dist/ && cp package.json ./dist/",
     "start-node": "nodemon --exec babel-node src/server.js",
+    "clean:build": "rm -rf dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -42,5 +44,8 @@
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

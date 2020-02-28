@@ -1,3 +1,5 @@
+import { check } from 'prettier';
+
 class Hello {
   constructor() {
     this.a = 12;
@@ -10,3 +12,9 @@ class Hello {
 }
 
 export default Hello;
+
+function checkString(variavel) {
+  return typeof variavel === 'string';
+}
+
+checkString('ddd');

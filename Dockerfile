@@ -4,20 +4,21 @@ RUN apt-get update
 
 RUN apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
 
-RUN mkdir /app
+RUN mkdir -p /usr/src/app
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 RUN chown -R node:node .
 
-COPY package.json .
+COPY . .
 
 RUN npm i --silent
 
-COPY src/ ./src
-
-USER node
+RUN npm run build
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD node ./dist/server.js
+
+USER node
+
