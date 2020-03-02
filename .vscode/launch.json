@@ -14,8 +14,16 @@
     {
       "type": "node",
       "request": "attach",
-      "name": "Docker: Attach to Node",
-      "remoteRoot": "/usr/src/app"
+      "name": "Attach",
+      "port": 9229,
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach by Process ID",
+      "processId": "${command:PickProcess}",
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { UsersModel } from '../repositories/models/user';
+
 export default class UserAction {
   static findAll(req, res) {
     UsersModel.find()

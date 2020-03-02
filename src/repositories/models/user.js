@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import { db } from '../index';
 
-const userSchema = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
+const userSchema = db.Schema({
+  _id: db.Schema.Types.ObjectId,
   name: { type: String },
   email: {
     type: String,
@@ -17,6 +17,6 @@ const userSchema = mongoose.Schema({
   resetPasswordExpires: { type: Date }
 });
 
-const UsersModel = mongoose.model('users', userSchema);
+const UsersModel = db.model('users', userSchema);
 
 export { UsersModel };
