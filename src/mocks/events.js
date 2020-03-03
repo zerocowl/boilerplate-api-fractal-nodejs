@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     date: '10-01-2018',
     hour: '10:00 - 10:40',
@@ -242,3 +242,5 @@ export const data = [
     location: ''
   }
 ];
+
+export { data };

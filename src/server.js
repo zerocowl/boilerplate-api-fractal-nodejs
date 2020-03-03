@@ -1,6 +1,6 @@
 import express from 'express';
 import UserAction from './actions/user';
-import { data } from '../src/__mocks__/events';
+import { data } from './mocks/events';
 const app = express();
 
 app.get('/', function(req, res) {
